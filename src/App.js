@@ -10,7 +10,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = (props) => {
-  console.log(props);
+  // console.log(props);
   const { state, removeFeature, buyItem } = props
 
   return (
@@ -34,7 +34,7 @@ const App = (props) => {
 };
 
 const mapStateToProps = state => {
-  console.log('hi', state);
+  // console.log('hi', state);
   return {
     state
   }

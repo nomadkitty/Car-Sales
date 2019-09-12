@@ -18,6 +18,7 @@ const initialState = {
 }
 
 const carReducer = (state=initialState, action) => {
+  // console.log(state.store, 'hi')
   switch (action.type) {
     case BUY_ITEM: 
       return {
@@ -26,7 +27,9 @@ const carReducer = (state=initialState, action) => {
           ...state.car,
           price: state.car.price + action.payload.price, 
           features: [...state.car.features, action.payload]
-        }
+        },
+        store: 
+          state.store.filter(item=> item.id !== action.payload.id)
       }
     case REMOVE_FEATURE:
       return {
@@ -36,7 +39,8 @@ const carReducer = (state=initialState, action) => {
           price: state.car.price - action.payload.price,
           features: state.car.features.filter(item => 
             item.id ===action.payload.id ? !item : item)
-        }
+        },
+        store: [...state.store, action.payload]
       }
     default:
       return state

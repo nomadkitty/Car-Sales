@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AdditionalFeature = props => {
-  console.log('addtional', props)
+  // console.log('addtional', props)
 
   return (
     <li>
